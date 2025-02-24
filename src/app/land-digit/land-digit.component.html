@@ -1,5 +1,14 @@
-<main>
-  <p-breadcrumb class="max-w-full" [model]="items" [home]="home" />
+
+  <div class="header-container">
+    <!-- Breadcrumb -->
+    <p-breadcrumb class="breadcrumb" [model]="items" [home]="home"></p-breadcrumb>
+
+    <!-- Payroll Login Button -->
+    <button class="payroll-button">
+      <a href="https://landdigit.tnhb.tn.gov.in/login">Land Digit Login</a>
+    </button>
+  </div>
+<div class="main">
 
   <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem">
     <p-dropdown
@@ -91,7 +100,7 @@
       <p-chart type="bar" [data]="data7" [options]="options7"></p-chart>
     </p-card>
   </section>
-</main>
+</div>
 <ngx-spinner
   bdColor="rgba(26, 26, 26, 0.863)  "
   size="medium"

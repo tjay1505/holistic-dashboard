@@ -1,5 +1,14 @@
+<div class="header-container">
+  <!-- Breadcrumb -->
+  <p-breadcrumb class="breadcrumb" [model]="items" [home]="home"></p-breadcrumb>
+
+  <!-- Payroll Login Button -->
+  <button class="payroll-button">
+    <a href="https://monitoring.tnhb.in/">Monitoring Login</a>
+  </button>
+</div>
 <main>
-    <p-breadcrumb class="max-w-full" [model]="items" [home]="home" />
+
 
     <div style="display: flex;flex-wrap: wrap;gap: 1rem;margin-bottom: 1rem;">
         <p-dropdown [options]="cityOrRural" [(ngModel)]="selectedcityOrRural" (onChange)="dataChange('city')"
