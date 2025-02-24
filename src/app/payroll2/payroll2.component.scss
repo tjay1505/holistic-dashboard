@@ -51,7 +51,7 @@
 }
 
 .card {
-  background-color: white;
+  //background-color: white;
   border-radius: 12px;
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -419,3 +419,10 @@ mat-label {
 }
 
 $clr: rgba(26, 26, 26, 0.863);
+
+//===================================
+.forCards {
+  background: url("../../../public/bg.png") no-repeat center center;
+  background-size: cover;
+  font-weight: 100;
+}
