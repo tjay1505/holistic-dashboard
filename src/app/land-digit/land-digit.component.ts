@@ -63,8 +63,6 @@ export class LandDigitComponent implements OnInit {
   data7: any;
   options7: any;
 
-  topbox = [1, 2, 3, 4];
-
   constructor(
     private title: Title,
     private landService: LandService,
@@ -378,7 +376,31 @@ export class LandDigitComponent implements OnInit {
     });
   }
 
+  topBoxValue: { tittle: any; val: any }[] = [
+    { tittle: 'Land Acquisition - Award (in acres)', val: '0.00' },
+    { tittle: 'Utilised (in acres)', val: '0.00' },
+    { tittle: 'Not Utilised (in acres)', val: '0.00' },
+    { tittle: 'Land Available (in acres)', val: '0.00' },
+  ];
+
+  changeTopBoxValue(field: any, value: any) {
+    console.log(field, value);
+
+    const fieldMap: { [key: string]: number } = {
+      v_TOTAL_EXTENT: 0,
+      utilisedExtent: 1,
+      notUtilisedExtent: 2,
+      futureDevExtent: 3,
+    };
+
+    if (field in fieldMap) {
+      this.topBoxValue[fieldMap[field]].val = value.toFixed(2);
+    }
+  }
+
   calculateData(field: string, data: any): any {
+    //console.log(field);
+
     let value = 0;
     data.forEach((element: any) => {
       const fieldValue = parseFloat(element[field]);
@@ -392,6 +414,11 @@ export class LandDigitComponent implements OnInit {
         value += fieldValue;
       }
     });
+    //console.log(value);
+
+    this.changeTopBoxValue(field, value);
+    console.log(this.topBoxValue);
+
     return value.toFixed(2);
   }
 
