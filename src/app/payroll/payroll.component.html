@@ -1,0 +1,34 @@
+<main>
+    <p-breadcrumb class="max-w-full" [model]="items" [home]="home" />
+
+    <div style="display: flex;flex-wrap: wrap;gap: 1rem;margin-bottom: 1rem;">
+        <p-dropdown [options]="cityOrRural" [(ngModel)]="selectedcityOrRural" placeholder="Select City or Rural" />
+        <p-dropdown [options]="circle" [(ngModel)]="selectedcircle" placeholder="Select Circle" />
+        <p-dropdown [options]="officeCode" [(ngModel)]="selectedofficeCode" placeholder="Select Office Code" />
+        <p-dropdown [options]="dcode" [(ngModel)]="selecteddcode" placeholder="Select D Code" />
+    </div>
+
+    <section class="grid-container">
+        <div class="grid-item">
+            <h4 style="font-weight: 600;">Payroll Breakdown MTD</h4>
+            <p-chart type="doughnut" [data]="data1" [options]="options1"></p-chart>
+        </div>
+        <div class="grid-item">
+            <h4 style="font-weight: 600;">Payroll Breakdown YTD</h4>
+            <p-chart type="doughnut" [data]="data2" [options]="options2"></p-chart>
+        </div>
+        <div class="grid-item">
+            <h4 style="font-weight: 600;">Income Tax</h4>
+            <p-chart type="bar" [data]="data3" [options]="options3"></p-chart>
+        </div>
+        <div class="grid-item">
+            <h4 style="font-weight: 600;">Pay Breakdown</h4>
+            <p-chart type="bar" [data]="data4" [options]="options4"></p-chart>
+        </div>
+        <div class="grid-item">
+            <h4 style="font-weight: 600;">Deductions Breakdown</h4>
+            <p-chart type="bar" [data]="data5" [options]="options5"></p-chart>
+        </div>
+    </section>
+
+</main>

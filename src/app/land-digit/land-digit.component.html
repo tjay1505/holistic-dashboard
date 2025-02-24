@@ -1,0 +1,100 @@
+<main>
+  <p-breadcrumb class="max-w-full" [model]="items" [home]="home" />
+
+  <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem">
+    <p-dropdown
+      [options]="cityOrRural"
+      [(ngModel)]="selectedcityOrRural"
+      placeholder="Select City or Rural"
+      (onChange)="onCityOrRuralChange()"
+    />
+    <p-dropdown
+      [options]="circles"
+      [(ngModel)]="selectedcircle"
+      placeholder="Select Circle"
+      (onChange)="onCircleChange()"
+    />
+    <p-dropdown
+      [options]="divisions"
+      [(ngModel)]="selecteddivision"
+      placeholder="Select Division"
+      (onChange)="onDivisionChange()"
+    />
+    <p-dropdown
+      [options]="districts"
+      [(ngModel)]="selecteddistrict"
+      placeholder="Select District"
+      (onChange)="onDistrictChange()"
+    />
+    <p-dropdown
+      [options]="villages"
+      [(ngModel)]="selectedvillage"
+      placeholder="Select Village"
+      (onChange)="onVillageChange()"
+    />
+  </div>
+
+  <section class="section-charts">
+    <div
+      *ngFor="let i of topbox"
+      class="col-12 bg-white rounded rounded-5 p-4"
+      style="height: 150px; border-radius: 8px"
+    >
+      <p>Date waiting - (Dummy areas)</p>
+      <p>- 450560</p>
+    </div>
+  </section>
+
+  <section class="section-charts">
+    <p-card class="card pie-chart-card">
+      <h4 style="font-weight: 600">Land Available (Extent in Acres)</h4>
+      <p-chart type="pie" [data]="data2" [options]="options2"></p-chart>
+    </p-card>
+
+    <p-card class="card doughnut-chart-card">
+      <h4 style="font-weight: 600">PTO & PNTO (Extent in acres)</h4>
+      <p-chart type="doughnut" [data]="data3" [options]="options3"></p-chart>
+    </p-card>
+
+    <p-card class="card doughnut-chart-card">
+      <h4 style="font-weight: 600">Award Amount (in Rs.)</h4>
+      <p-chart type="doughnut" [data]="data6" [options]="options6"></p-chart>
+    </p-card>
+  </section>
+
+  <section class="bar-chart-section">
+    <p-card class="card bar-chart-card">
+      <h4 style="font-weight: 600">Total Land Acquisition (Extent in acres)</h4>
+      <p-chart type="bar" [data]="data1" [options]="options1"></p-chart>
+    </p-card>
+
+    <p-card class="card bar-chart-card">
+      <h4 style="font-weight: 600">
+        PTO - Utilised, Non Utilised & Land available
+      </h4>
+      <p-chart type="bar" [data]="data4" [options]="options4"></p-chart>
+    </p-card>
+  </section>
+
+  <section>
+    <p-card class="card bar-chart-card">
+      <h4 style="font-weight: 600">PTO - Under Litigation (Extent in acres)</h4>
+      <p-chart type="bar" [data]="data5" [options]="options5"></p-chart>
+    </p-card>
+  </section>
+  <br />
+  <section>
+    <p-card class="card bar-chart-card">
+      <h4 style="font-weight: 600">
+        PNTO - Under Litigation (Extent in acres)
+      </h4>
+      <p-chart type="bar" [data]="data7" [options]="options7"></p-chart>
+    </p-card>
+  </section>
+</main>
+<ngx-spinner
+  bdColor="rgba(26, 26, 26, 0.863)  "
+  size="medium"
+  color="white"
+  type="ball-fussion"
+></ngx-spinner>

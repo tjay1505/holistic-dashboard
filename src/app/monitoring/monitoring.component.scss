@@ -1,0 +1,57 @@
+:host ::ng-deep .p-breadcrumb {
+  border: none;
+  background-color: transparent;
+}
+
+.bar-chart-section {
+  display: grid;
+  grid-template-columns: repeat(
+    2,
+    1fr
+  ); // Single column for the bar chart section
+  gap: 1rem;
+  justify-items: center; // Center the bar chart horizontally
+  padding: 0;
+  margin-bottom: 1rem;
+
+  .bar-chart-card {
+    width: 100%; // Allow it to take full width within the container
+    max-width: 50vw; // Set a maximum width for larger screens
+  }
+
+  @media (max-width: 768px) {
+    .bar-chart-card {
+      max-width: 100%; // Full width on smaller screens
+      .p-chart {
+        height: 300px; // Adjust height for smaller screens
+      }
+    }
+  }
+}
+
+.section-charts {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(300px, 1fr)
+  ); // Auto layout with minimum width for each card
+  gap: 1rem;
+  margin-bottom: 1rem;
+
+  .pie-chart-card,
+  .doughnut-chart-card {
+    .p-chart {
+      height: 300px; // Set height for pie/doughnut charts
+    }
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr; // Full width for each card on smaller screens
+    .pie-chart-card,
+    .doughnut-chart-card {
+      .p-chart {
+        height: 250px; // Adjust height for smaller screens
+      }
+    }
+  }
+}

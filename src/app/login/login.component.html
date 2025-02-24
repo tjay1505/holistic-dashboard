@@ -1,0 +1,25 @@
+<main id="main">
+    <div class="card flex justify-content-center">
+        <p-card header="Holistic" subheader="Login" [style]="{ width: '360px' }">
+            <ng-template pTemplate="header">
+                <img alt="Card" src="https://primefaces.org/cdn/primeng/images/card-ng.jpg" />
+            </ng-template>
+            <form>
+                <div class="flex flex-column gap-2">
+                    <label for="username">Username</label>
+                    <input pInputText id="username" aria-describedby="username-help" />
+                </div>
+                <div class="flex flex-column gap-2">
+                    <label for="username">password</label>
+                    <p-password [toggleMask]="true" />
+                </div>
+            </form>
+            <ng-template pTemplate="footer">
+                <div class="flex gap-3 mt-1">
+                    <p-button label="Cancel" severity="secondary" class="w-full" styleClass="w-full" />
+                    <p-button label="Save" class="w-full" styleClass="w-full" />
+                </div>
+            </ng-template>
+        </p-card>
+    </div>
+</main>

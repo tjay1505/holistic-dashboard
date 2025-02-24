@@ -1,0 +1,201 @@
+<p-breadcrumb class="max-w-full" [model]="items" [home]="home" />
+
+<div class="main">
+  <div style="display: flex">
+    <!-- Office Code -->
+    <div class="filter-item">
+      <mat-form-field appearance="outline" class="filter-field">
+        <mat-label class="filter-label">Office Code</mat-label>
+        <mat-select multiple (selectionChange)="onOfficeCodeChange($event)">
+          <mat-option *ngFor="let code of officecode" [value]="code">
+            {{ code }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <!-- Designation Code -->
+    <div class="filter-item">
+      <mat-form-field appearance="outline" class="filter-field">
+        <mat-label class="filter-label">Designation Code</mat-label>
+        <mat-select
+          multiple
+          (selectionChange)="onDesignationCodeChange($event)"
+        >
+          <mat-option
+            *ngFor="let designationcode of designation"
+            [value]="designationcode"
+          >
+            {{ designationcode }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <!-- Select Month -->
+    <div class="filter-item">
+      <mat-form-field appearance="outline" class="filter-field">
+        <mat-label class="filter-label">Select Month</mat-label>
+        <mat-select (selectionChange)="onMonthChange($event)">
+          <mat-option *ngFor="let month of months" [value]="month">
+            {{ month }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <!-- Select Year -->
+    <div class="filter-item">
+      <mat-form-field appearance="outline" class="filter-field">
+        <mat-label class="filter-label">Select Year</mat-label>
+        <mat-select (selectionChange)="onYearChange($event)">
+          <mat-option *ngFor="let year of years" [value]="year">
+            {{ year }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div class="stats-cards">
+    <div class="card" style="background-color: rgba(182, 215, 168, 255)">
+      <div class="icon-container">
+        <i class="fa-solid fa-user"></i>
+      </div>
+      <div class="card-content">
+        <h1 class="head">Total Employee</h1>
+        <h3>{{ this.employeeCount }}</h3>
+      </div>
+    </div>
+    <!-- Card 2: Available Staff -->
+    <div class="card" style="background-color: rgba(213, 166, 189, 255)">
+      <div class="icon-container">
+        <i class="fa-solid fa-coins"></i>
+      </div>
+      <div class="card-content">
+        <h1 class="head">Total Earnings</h1>
+
+        <h3>Rs.{{ this.totalEarnings }}</h3>
+      </div>
+    </div>
+    <!-- Card 3: Average Treatment Costs -->
+    <div class="card" style="background-color: rgba(180, 167, 214, 255)">
+      <div class="icon-container">
+        <i class="fas fa-minus-circle"></i>
+      </div>
+      <div class="card-content">
+        <h1 class="head">Total Deductions</h1>
+        <h3>Rs.{{ this.totalDeduction }}</h3>
+      </div>
+    </div>
+    <!-- Card 4: Available Cars -->
+    <div class="card" style="background-color: rgba(249, 203, 156, 255)">
+      <div class="icon-container">
+        <i class="fas fa-wallet"></i>
+      </div>
+      <div class="card-content">
+        <h1 class="head">Net Pay</h1>
+        <h3>Rs.{{ this.totalPay }}</h3>
+      </div>
+    </div>
+  </div>
+
+  <section class="additional-info">
+    <div class="chart-container-2">
+      <h4>Employee Salary</h4>
+      <hr />
+
+      <div style="height: 310px; width: 400px; text-align: center">
+        <canvas id="genderChart1"></canvas>
+      </div>
+    </div>
+
+    <div class="chart-container-2">
+      <h4>Deduction</h4>
+      <hr />
+
+      <div style="height: 310px; width: 300px; text-align: center">
+        <canvas id="disabilityChart1"></canvas>
+      </div>
+    </div>
+    <div class="chart-container-2" style="height: 450px">
+      <div style="height: 310px; width: 300px; text-align: center">
+        <h4>Payment Status</h4>
+        <hr />
+
+        <canvas id="paymentStatus"></canvas>
+      </div>
+    </div>
+  </section>
+
+  <!-- <div class="additional-info-1">
+            <div class="chart-container-3">
+                <h4>Street Vendor Income</h4>
+                <hr>
+
+                <div style="height:340px; width:700px;text-align:center">
+                    <canvas id="familyIncome1"></canvas>
+                </div>
+
+            </div>
+            <div class="chart-container-3">
+                <h4>Vending Type</h4>
+                <hr>
+
+                <div style="height:330px; width:550px;text-align:center">
+                    <canvas id="vendingType1"></canvas>
+
+                </div>
+            </div>
+
+        </div> -->
+  <div class="chart-container-1" style="width: 100%">
+    <h4>Earnings</h4>
+    <hr />
+
+    <div style="height: 310px; width: 100%; text-align: center" class="">
+      <canvas id="vendingBusinessName1" width="300" height="300"></canvas>
+    </div>
+  </div>
+
+  <div class="chart-container-1">
+    <h4>Deduction</h4>
+    <hr />
+
+    <div style="height: 310px; width: 1300px; text-align: center">
+      <canvas id="deduction" width="300" height="300"></canvas>
+    </div>
+  </div>
+  <div class="additional-info-1">
+    <div class="chart-container-3">
+      <h4>Standard Deduction</h4>
+      <hr />
+
+      <div style="height: 310px; width: 690px; text-align: center">
+        <canvas id="familyEducation1"></canvas>
+      </div>
+    </div>
+    <div class="chart-container-3">
+      <h4>Advance Deductions</h4>
+      <hr />
+
+      <div style="height: 310px; width: 590px; text-align: center">
+        <canvas id="familyDisability1"></canvas>
+      </div>
+    </div>
+  </div>
+  <div class="SRB">
+    <h4>Sanctioned, Recovered and Balance</h4>
+    <hr />
+
+    <div style="height: 400px; width: 100%; text-align: center">
+      <canvas id="deduction1" width="3000" height="1000"></canvas>
+    </div>
+  </div>
+</div>
+<ngx-spinner
+  bdColor="rgba(26, 26, 26, 0.863)  "
+  size="medium"
+  color="white"
+  type="ball-fussion"
+></ngx-spinner>

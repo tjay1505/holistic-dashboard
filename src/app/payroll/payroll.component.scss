@@ -1,0 +1,35 @@
+// Variables for grid settings
+$gap: 16px; // Space between grid items
+$min-column-width: 150px; // Minimum width of each column before wrapping
+
+// Main grid container styling
+.grid-container {
+  display: grid;
+  gap: $gap;
+  padding: $gap;
+
+  // Smooth responsive grid layout
+  grid-template-columns: repeat(auto-fit, minmax($min-column-width, 1fr));
+
+  // Style for grid items
+  .grid-item {
+    background-color: #f4f4f4;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease; // Adds smooth transition for grid items
+  }
+
+  .grid-item:nth-child(4) {
+    grid-column: 1 / span 2;
+  }
+
+  .grid-item:nth-child(5) {
+    grid-column: 1 / span 2;
+  }
+}
+
+:host ::ng-deep .p-breadcrumb {
+  border: none;
+  background-color: transparent;
+}

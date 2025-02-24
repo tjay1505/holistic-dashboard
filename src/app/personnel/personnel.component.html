@@ -1,0 +1,116 @@
+<main>
+    <p-breadcrumb class="max-w-full" [model]="items" [home]="home" />
+
+    <div style="display: flex;flex-wrap: wrap;gap: 1rem;margin-bottom: 1rem;">
+        <p-dropdown [options]="cityOrRural" optionLabel="label" [(ngModel)]="selectedcityOrRural"
+            placeholder="Select City or Rural" (onChange)="getOfficeCode()" />
+
+        <p-multiSelect [options]="officeCode" [(ngModel)]="selectedofficeCode" placeholder="Select Office Code"
+            (onChange)="filterStaffDetails()"></p-multiSelect>
+
+        <p-dropdown [options]="technical" [(ngModel)]="selectedtechnical"
+            placeholder="Select Technical or Non Technical" (onChange)="getCadreName()" />
+
+        <p-multiSelect [options]="ce" [(ngModel)]="selectedDesignation" (onChange)="filterCadre();filterStaffDetails()"
+            placeholder="Select Designation"></p-multiSelect>
+    </div>
+
+    <div>
+        <h4 style="font-weight: 600;">Staff Position</h4>
+    </div>
+    <section class="grid-container">
+        <div class="grid-item">
+            <h4 style="font-weight: 600;">Staff Position</h4>
+            <p-chart type="doughnut" [data]="data1" [options]="options1"></p-chart>
+        </div>
+        <div class="grid-item">
+            <h4 style="font-weight: 600;">Working and Retirement</h4>
+            <p-chart type="pie" [data]="data3" [options]="options3"></p-chart>
+        </div>
+        <div class="grid-item">
+            <h4 style="font-weight: 600;">Gender</h4>
+            <p-chart type="bar" [data]="data2" [options]="options2"></p-chart>
+        </div>
+    </section>
+    <section class="grid-container">
+        <div class="grid-item">
+            <h4 style="font-weight: 600;">Disability</h4>
+            <p-chart type="bar" [data]="data4" [options]="options4"></p-chart>
+        </div>
+    </section>
+
+    <div>
+        <h4 style="font-weight: 600;">Designation wise - Staff Position</h4>
+    </div>
+    <section class="grid-container">
+        <div class="grid-item">
+            <p-chart type="bar" [data]="data5" [options]="options5"></p-chart>
+        </div>
+    </section>
+
+    <div>
+        <h4 style="font-weight: 600;">Recruitment Details</h4>
+    </div>
+    <section class="grid-container">
+        <div class="grid-item">
+            <h4 style="font-weight: 600;">Direct Recruitment</h4>
+            <p-chart type="bar" [data]="data6" [options]="options6"></p-chart>
+        </div>
+        <div class="grid-item">
+            <h4 style="font-weight: 600;">Compassionate Ground Recruitment</h4>
+            <p-chart type="bar" [data]="data7" [options]="options7"></p-chart>
+        </div>
+    </section>
+
+    <div>
+        <h4 style="font-weight: 600;">Disciplinary Actions</h4>
+    </div>
+    <div style="display: flex;flex-wrap: wrap;gap: 1rem;margin-bottom: 1rem;">
+        <p-dropdown [options]="under37" [(ngModel)]="selectedunder37" placeholder="Select" />
+    </div>
+    <section class="grid-container">
+        <div class="grid-item">
+            <h4 style="font-weight: 600;">Board</h4>
+            <p-chart type="bar" [data]="data8" [options]="options8"></p-chart>
+        </div>
+        <div class="grid-item">
+            <h4 style="font-weight: 600;">Pending Cases</h4>
+            <p-chart type="pie" [data]="data9" [options]="options9"></p-chart>
+        </div>
+        <div class="grid-item">
+            <h4 style="font-weight: 600;">Suspension</h4>
+            <p-chart type="bar" [data]="data10" [options]="options10"></p-chart>
+        </div>
+    </section>
+
+    <section class="grid-container">
+        <div class="grid-item">
+            <h4 style="font-weight: 600;">DVAC</h4>
+            <p-chart type="bar" [data]="data11" [options]="options8"></p-chart>
+        </div>
+        <div class="grid-item">
+            <h4 style="font-weight: 600;">Pending Cases</h4>
+            <p-chart type="pie" [data]="data12" [options]="options9"></p-chart>
+        </div>
+        <div class="grid-item">
+            <h4 style="font-weight: 600;">Suspension</h4>
+            <p-chart type="bar" [data]="data13" [options]="options10"></p-chart>
+        </div>
+    </section>
+
+    <section class="grid-container">
+        <div class="grid-item">
+            <h4 style="font-weight: 600;">CC</h4>
+            <p-chart type="bar" [data]="data14" [options]="options8"></p-chart>
+        </div>
+        <div class="grid-item">
+            <h4 style="font-weight: 600;">Pending Cases</h4>
+            <p-chart type="pie" [data]="data15" [options]="options9"></p-chart>
+        </div>
+        <div class="grid-item">
+            <h4 style="font-weight: 600;">Suspension</h4>
+            <p-chart type="bar" [data]="data16" [options]="options10"></p-chart>
+        </div>
+    </section>
+
+</main>

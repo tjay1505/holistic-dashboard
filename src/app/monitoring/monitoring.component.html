@@ -1,0 +1,66 @@
+<main>
+    <p-breadcrumb class="max-w-full" [model]="items" [home]="home" />
+
+    <div style="display: flex;flex-wrap: wrap;gap: 1rem;margin-bottom: 1rem;">
+        <p-dropdown [options]="cityOrRural" [(ngModel)]="selectedcityOrRural" (onChange)="dataChange('city')"
+            placeholder="Select City or Rural" />
+        <p-dropdown [options]="circles" [(ngModel)]="selectedcircle" (onChange)="dataChange('circle')"
+            placeholder="Select Circle" />
+        <p-dropdown [options]="divisions" [(ngModel)]="selecteddivision" (onChange)="dataChange('division')"
+            placeholder="Select Division" />
+        <p-dropdown [options]="year" [(ngModel)]="selectedyear" (onChange)="dataChange('year')"
+            placeholder="Select Year" />
+        <p-dropdown [options]="month" [(ngModel)]="selectedmonth" (onChange)="dataChange('month')"
+            placeholder="Select Month" />
+        <p-dropdown [options]="type" [(ngModel)]="selectedtype" (onChange)="dataChange('type')"
+            placeholder="Select Type" />
+    </div>
+
+    <section class="bar-chart-section">
+        <p-card class="card bar-chart-card">
+            <h4 style="font-weight: 600;">Total Projects</h4>
+            <p-chart type="bar" [data]="data2" [options]="options2"></p-chart>
+        </p-card>
+        <p-card class="card bar-chart-card">
+            <h4 style="font-weight: 600;">Completion Progress Analysis</h4>
+            <p-chart type="bar" [data]="data3" [options]="options3"></p-chart>
+        </p-card>
+        <p-card class="card bar-chart-card">
+            <h4 style="font-weight: 600;">Physical and Financial Progress</h4>
+            <p-chart type="bar" [data]="data4" [options]="options4"></p-chart>
+        </p-card>
+        <p-card class="card bar-chart-card">
+            <h4 style="font-weight: 600;">Financial Progress (Rs.)</h4>
+            <p-chart type="bar" [data]="data5" [options]="options5"></p-chart>
+        </p-card>
+    </section>
+
+    <section class="section-charts">
+        <p-card class="card pie-chart-card">
+            <h4 style="font-weight: 600;">Ongoing and Completed Projects</h4>
+            <p-chart type="pie" [data]="data1" [options]="options1"></p-chart>
+        </p-card>
+    </section>
+
+    <div style="display: flex;flex-wrap: wrap;gap: 1rem;margin-bottom: 1rem;">
+        <p-dropdown [options]="project" [(ngModel)]="selectedProject" placeholder="Select City or Rural" />
+        <p-dropdown [options]="contractor" [(ngModel)]="selectedContractor" placeholder="Select Circle" />
+    </div>
+
+    <section class="bar-chart-section">
+        <p-card class="card bar-chart-card">
+            <h4 style="font-weight: 600;">Completion Progress Analysis</h4>
+            <p-chart type="bar" [data]="data3" [options]="options3"></p-chart>
+        </p-card>
+        <p-card class="card bar-chart-card">
+            <h4 style="font-weight: 600;">Physical and Financial Progress</h4>
+            <p-chart type="bar" [data]="data4" [options]="options4"></p-chart>
+        </p-card>
+        <p-card class="card bar-chart-card">
+            <h4 style="font-weight: 600;">Financial Progress (Rs.)</h4>
+            <p-chart type="bar" [data]="data5" [options]="options5"></p-chart>
+        </p-card>
+    </section>
+
+
+</main>

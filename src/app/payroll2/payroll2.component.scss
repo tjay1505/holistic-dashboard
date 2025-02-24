@@ -1,0 +1,389 @@
+.main {
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 6px;
+  margin-top: 20px;
+  overflow-y: hidden;
+}
+
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.stats-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.card {
+  background-color: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+}
+
+.card-icon {
+  font-size: 40px;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.card h3 {
+  font-size: 22px;
+  color: #333;
+  margin: 10px 0;
+  text-align: center;
+  /* font-weight: bold; */
+}
+
+.card p {
+  font-size: 14px;
+  color: #777;
+}
+
+/* .icon-container {
+  background-color: #f0f4ff;
+  padding: 15px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-container i {
+  font-size: 24px;
+  color: #0c0c0c;
+} */
+
+/* .card:nth-child(1) .icon-container {
+  background-color: #87A2FF;
+}
+
+.card:nth-child(2) .icon-container {
+  background-color: #C4D7FF;
+}
+
+.card:nth-child(3) .icon-container {
+  background-color: #FFD7C4;
+}
+
+.card:nth-child(4) .icon-container {
+  background-color: #FFF4B5;
+} */
+
+.chart-section {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+}
+
+.chart-container {
+  background-color: white;
+  padding: 20px;
+  /* border: 1px solid black; */
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-height: 400px;
+  width: 1409px;
+  overflow-y: auto;
+}
+
+.chart-container-5 {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-height: 400px;
+  width: 1438px;
+  margin-top: 20px;
+  margin-left: 15px;
+  overflow-y: auto;
+  /* Enable vertical scrolling */
+}
+
+//---------------------------for last -Sanctioned, Recovered and Balance
+.SRB {
+  margin-top: 10px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.chart-container-1 {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: max-content;
+  max-width: 1409px;
+  /* Set a max width for the chart */
+  height: max-content;
+  margin-top: 10px;
+  /* Fix the height */
+}
+
+.chart-container-2 {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  /* Full width */
+  max-width: 600px;
+  /* Max width */
+  height: max-content;
+  /* Fixed height */
+}
+
+canvas {
+  max-width: 100%;
+  /* Responsive width */
+  height: auto;
+  /* Maintain aspect ratio */
+  width: 100%;
+  /* Fill the container */
+}
+
+.additional-info {
+  display: grid;
+  grid-template-columns: 2fr 1.4fr 1.4fr;
+  gap: 15px;
+  margin-top: 10px;
+  /* border: 1px solid black; */
+}
+
+.additional-info-1 {
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  gap: 15px;
+  margin-top: 10px;
+  /* border: 1px solid black; */
+}
+
+.chart-container-3 {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  /* Full width */
+  max-width: 800px;
+  /* Max width */
+  height: max-content;
+  /* Fixed height */
+}
+
+.patients-division {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.patients-division ul {
+  list-style: none;
+}
+
+.patients-division li {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.monthly-stats {
+  background-color: #6c63ff;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.vendor-profile-heading {
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  /* margin: 12px auto; */
+  margin-top: -3px;
+  margin-left: 600px;
+  padding: 8px 15px;
+  color: #333;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  width: fit-content;
+}
+
+.heading::after {
+  content: "";
+  display: block;
+  width: 30%;
+  height: 2px;
+  background-color: #333;
+  margin: 8px auto 0 auto;
+  border-radius: 1px;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 15px;
+  /* border: 1px solid black; */
+}
+
+.card-2 {
+  background-color: #e7edf0;
+  border-radius: 8px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  /* Hide any overflowing content inside the card */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card-2 .logo img {
+  width: 40px;
+  margin-bottom: 10px;
+}
+
+.card-2 .scheme-name {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-2 .count {
+  font-size: 24px;
+  font-weight: bold;
+  color: #012144;
+}
+
+h4 {
+  font-weight: bold;
+  font-size: 23px;
+}
+
+.section-title {
+  background-color: #0a2472;
+  color: #fff;
+  padding: 4px;
+  text-align: center;
+  border-radius: 4px;
+  margin-left: -171px;
+  width: 1457px;
+  margin-top: -7px;
+}
+
+.HEADING-H1 {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.head {
+  font-weight: bold;
+  text-align: center;
+}
+
+.container-directorate {
+  /* border: 1px solid black; */
+  display: flex;
+  flex-direction: row;
+  width: fit-content;
+  height: 60px;
+  gap: 20px;
+  margin-left: 790px;
+  margin-top: -30px;
+}
+
+.foot {
+  border: 1px solid black;
+}
+
+mat-label {
+  /* font-weight: bold; */
+  margin-top: -100px;
+}
+
+.filter-field {
+  width: 290px;
+}
+
+.filter-item {
+  flex: 1 1 calc(25% - 10px);
+  /* Adjust as needed */
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+//----------------------------------
+:host ::ng-deep .p-breadcrumb {
+  border: none;
+  background-color: transparent;
+}
+
+.bar-chart-section {
+  display: grid;
+  grid-template-columns: repeat(
+    2,
+    1fr
+  ); // Single column for the bar chart section
+  gap: 1rem;
+  justify-items: center; // Center the bar chart horizontally
+  padding: 0;
+  margin-bottom: 1rem;
+
+  .bar-chart-card {
+    width: 100%; // Allow it to take full width within the container
+    max-width: 50vw; // Set a maximum width for larger screens
+  }
+
+  @media (max-width: 768px) {
+    .bar-chart-card {
+      max-width: 100%; // Full width on smaller screens
+      .p-chart {
+        height: 300px; // Adjust height for smaller screens
+      }
+    }
+  }
+}
+
+.section-charts {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(300px, 1fr)
+  ); // Auto layout with minimum width for each card
+  gap: 1rem;
+  margin-bottom: 1rem;
+
+  .pie-chart-card,
+  .doughnut-chart-card {
+    .p-chart {
+      height: 300px; // Set height for pie/doughnut charts
+    }
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr; // Full width for each card on smaller screens
+    .pie-chart-card,
+    .doughnut-chart-card {
+      .p-chart {
+        height: 250px; // Adjust height for smaller screens
+      }
+    }
+  }
+}
+
+$clr: rgba(26, 26, 26, 0.863);
