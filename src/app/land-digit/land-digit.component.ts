@@ -384,7 +384,7 @@ export class LandDigitComponent implements OnInit {
   ];
 
   changeTopBoxValue(field: any, value: any) {
-    console.log(field, value);
+    //console.log(field, value);
 
     const fieldMap: { [key: string]: number } = {
       v_TOTAL_EXTENT: 0,
@@ -417,7 +417,7 @@ export class LandDigitComponent implements OnInit {
     //console.log(value);
 
     this.changeTopBoxValue(field, value);
-    console.log(this.topBoxValue);
+    //console.log(this.topBoxValue);
 
     return value.toFixed(2);
   }
