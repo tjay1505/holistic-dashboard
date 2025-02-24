@@ -36,12 +36,12 @@
 
   <section class="section-charts">
     <div
-      *ngFor="let i of topbox"
-      class="col-12 bg-white rounded rounded-5 p-4"
-      style="height: 150px; border-radius: 8px"
+      style="font-weight: 500"
+      *ngFor="let items of topBoxValue"
+      class="p-4 topbox"
     >
-      <p>Date waiting - (Dummy areas)</p>
-      <p>- 450560</p>
+      <h3>{{ items.tittle }}</h3>
+      <h4>{{ items.val }}</h4>
     </div>
   </section>
 

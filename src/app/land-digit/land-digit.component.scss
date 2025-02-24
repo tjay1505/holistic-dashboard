@@ -57,3 +57,14 @@
 }
 
 $clr: rgba(26, 26, 26, 0.863);
+
+//============================topbox
+.topbox {
+  background: url("../../../public/bg.png") no-repeat center center;
+  background-size: cover;
+  width: 100%;
+  min-width: auto;
+  max-width: auto;
+  height: 150px;
+  border-radius: 8px;
+}
