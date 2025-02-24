@@ -71,8 +71,8 @@
         <i class="fa-solid fa-user"></i>
       </div>
       <div class="card-content">
-        <h1 class="head">Total Employee</h1>
-        <h3>{{ this.employeeCount }}</h3>
+        <h3 class="head">Total Employee</h3>
+        <h4>{{ this.employeeCount }}</h4>
       </div>
     </div>
     <!-- Card 2: Available Staff -->
@@ -81,9 +81,9 @@
         <i class="fa-solid fa-coins"></i>
       </div>
       <div class="card-content">
-        <h1 class="head">Total Earnings</h1>
+        <h3 class="head">Total Earnings</h3>
 
-        <h3>Rs.{{ this.totalEarnings | number:'1.2-2'}}</h3>
+        <h4>₹ {{ this.totalEarnings | number:'1.2-2'}}</h4>
       </div>
     </div>
     <!-- Card 3: Average Treatment Costs -->
@@ -92,8 +92,8 @@
         <i class="fas fa-minus-circle"></i>
       </div>
       <div class="card-content">
-        <h1 class="head">Total Deductions</h1>
-        <h3>Rs.{{ this.totalDeduction | number: '1.2-2' }}</h3>
+        <h3 class="head">Total Deductions</h3>
+        <h4>₹ {{ this.totalDeduction | number: '1.2-2' }}</h4>
       </div>
     </div>
     <!-- Card 4: Available Cars -->
@@ -102,8 +102,8 @@
         <i class="fas fa-wallet"></i>
       </div>
       <div class="card-content">
-        <h1 class="head">Net Pay</h1>
-        <h3>Rs.{{ this.totalPay | number: '1.2-2'}}</h3>
+        <h3 class="head">Net Pay</h3>
+        <h4  >₹ {{ this.totalPay | number: '1.2-2'}}</h4>
       </div>
     </div>
   </div>
