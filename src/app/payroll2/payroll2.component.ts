@@ -1043,7 +1043,7 @@ export class Payroll2Component {
   onMonthChange(event: any): void {
     this.selectedMonth = event.value;
     console.log('Selected Month:', this.selectedMonth);
-    debugger;
+
     this.applyFilters();
     this.getSummary_filter();
   }
