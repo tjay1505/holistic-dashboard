@@ -1,3 +1,34 @@
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  /* Aligns items to opposite ends */
+  align-items: center;
+  background-color: transparent;
+  /* Dark blue background */
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+
+.breadcrumb {
+  font-size: 16px;
+  color: white;
+}
+
+.payroll-button {
+  background-color: #0d47a1;
+  /* Yellow background */
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+}
+
+.payroll-button a {
+  text-decoration: none;
+  color: #ffffff;
+  /* Matching breadcrumb background */
+  font-weight: bold;
+  font-size: 14px;
+}
 :host ::ng-deep .p-breadcrumb {
   border: none;
   background-color: transparent;

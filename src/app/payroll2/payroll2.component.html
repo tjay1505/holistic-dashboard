@@ -1,5 +1,13 @@
-<p-breadcrumb class="max-w-full" [model]="items" [home]="home" />
 
+<div class="header-container">
+  <!-- Breadcrumb -->
+  <p-breadcrumb class="breadcrumb" [model]="items" [home]="home"></p-breadcrumb>
+
+  <!-- Payroll Login Button -->
+  <button class="payroll-button">
+    <a href="https://payroll.tnhb.in/login">Payroll Login</a>
+  </button>
+</div>
 <div class="main">
   <div style="display: flex">
     <!-- Office Code -->
@@ -75,7 +83,7 @@
       <div class="card-content">
         <h1 class="head">Total Earnings</h1>
 
-        <h3>Rs.{{ this.totalEarnings }}</h3>
+        <h3>Rs.{{ this.totalEarnings | number:'1.2-2'}}</h3>
       </div>
     </div>
     <!-- Card 3: Average Treatment Costs -->
@@ -85,7 +93,7 @@
       </div>
       <div class="card-content">
         <h1 class="head">Total Deductions</h1>
-        <h3>Rs.{{ this.totalDeduction }}</h3>
+        <h3>Rs.{{ this.totalDeduction | number: '1.2-2' }}</h3>
       </div>
     </div>
     <!-- Card 4: Available Cars -->
@@ -95,7 +103,7 @@
       </div>
       <div class="card-content">
         <h1 class="head">Net Pay</h1>
-        <h3>Rs.{{ this.totalPay }}</h3>
+        <h3>Rs.{{ this.totalPay | number: '1.2-2'}}</h3>
       </div>
     </div>
   </div>
