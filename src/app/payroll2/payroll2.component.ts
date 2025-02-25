@@ -122,6 +122,50 @@ export class Payroll2Component {
   selectedOfficeCodes: string[] = []; // Store selected office codes
   selectedDesignationCodes: string[] = []; // Store selected designation codes
 
+  topBoxValue: {
+    tittle: any;
+    options: boolean;
+    val: any;
+    clr: any;
+    icon: any;
+  }[] = [
+    {
+      tittle: 'Total Employee',
+      val: '0.00',
+      options: false,
+      clr: 'linear-gradient(90deg, rgb(134, 139, 29), rgb(217, 229, 150))',
+      icon: 'https://cdn-icons-png.flaticon.com/128/18992/18992269.png',
+    },
+    {
+      tittle: 'Total Earnings ',
+      val: '0.00',
+      options: true,
+      clr: 'linear-gradient(90deg, rgb(26, 26, 62), rgb(113, 118, 242))',
+      icon: 'https://cdn-icons-png.flaticon.com/128/11476/11476545.png',
+    },
+    {
+      tittle: 'Total Deductions ',
+      val: '0.00',
+      options: true,
+      clr: 'linear-gradient(90deg, rgb(234, 62, 56), rgb(255, 205, 148))',
+      icon: 'https://cdn-icons-png.flaticon.com/128/12866/12866223.png',
+    },
+    {
+      tittle: 'Net Pay',
+      val: '0.00',
+      options: true,
+      clr: 'linear-gradient(90deg, rgb(15, 149, 0), rgb(169, 248, 155))',
+      icon: 'https://cdn-icons-png.flaticon.com/128/3359/3359235.png',
+    },
+  ];
+
+  upDateTopBoxValue(data: any) {
+    this.topBoxValue[0].val = this.employeeCount;
+    this.topBoxValue[1].val = this.totalEarnings;
+    this.topBoxValue[2].val = this.totalDeduction;
+    this.topBoxValue[3].val = this.totalPay;
+  }
+
   constructor(
     private apiCall: ApiService,
     private spinner: NgxSpinnerService
@@ -929,7 +973,7 @@ export class Payroll2Component {
     if (this.advanceChart) {
       this.advanceChart.destroy();
     }
-
+    this.upDateTopBoxValue('f');
     // Create the chart
     this.advanceChart = new Chart(ctx, config);
   }
@@ -946,6 +990,7 @@ export class Payroll2Component {
           this.totalEarnings = data.totalEarnings;
           this.totalDeduction = data.totalDeductions;
           this.totalPay = data.totalNetpay;
+          this.upDateTopBoxValue('f');
           this.paymentStatusYesCount = data.paymentStatusYesCount;
           this.paymentStatusNoCount = data.paymentStatusNoCount;
           this.disabilityData1 = [
@@ -1095,6 +1140,7 @@ export class Payroll2Component {
         this.totalEarnings = data.totalEarnings;
         this.totalDeduction = data.totalDeductions;
         this.totalPay = data.totalNetpay;
+        this.upDateTopBoxValue('f');
         this.paymentStatusYesCount = data.paymentStatusYesCount;
         this.paymentStatusNoCount = data.paymentStatusNoCount;
         this.disabilityData1 = [
@@ -1243,6 +1289,7 @@ export class Payroll2Component {
         console.log(this.officecode);
       }
     );
+    this.upDateTopBoxValue('f');
   }
   getDesignation() {
     let payload = {
@@ -1254,5 +1301,6 @@ export class Payroll2Component {
         this.designation = data.data;
       }
     );
+    this.upDateTopBoxValue('f');
   }
 }
