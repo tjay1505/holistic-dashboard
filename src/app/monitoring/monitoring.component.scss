@@ -14,20 +14,59 @@
   color: white;
 }
 
+
 .payroll-button {
-  background-color: #0d47a1;
-  /* Yellow background */
+  background-color: #015798;
+  /* Blue */
   border: none;
-  padding: 8px 12px;
+  padding: 10px 15px;
   border-radius: 6px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.3s ease-in-out;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.payroll-button:hover {
+  background-color: #014177;
+  /* Darker blue */
+  transform: scale(1.05);
+  /* Slight zoom effect */
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.payroll-button:active {
+  transform: scale(0.95);
+  /* Shrinks slightly on click */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Ripple Effect */
+.payroll-button::after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: scale(0);
+  opacity: 0;
+  transition: transform 0.5s, opacity 0.6s;
+}
+
+.payroll-button:active::after {
+  transform: scale(2.5);
+  opacity: 0;
 }
 
 .payroll-button a {
   text-decoration: none;
   color: #ffffff;
-  /* Matching breadcrumb background */
   font-weight: bold;
   font-size: 14px;
+  display: inline-block;
 }
 :host ::ng-deep .p-breadcrumb {
   border: none;
