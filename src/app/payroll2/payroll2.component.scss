@@ -325,7 +325,7 @@ h4 {
 
 .head {
   font-weight: bold;
-  text-align:center;
+  text-align: center;
 }
 
 .container-directorate {
@@ -425,4 +425,77 @@ $clr: rgba(26, 26, 26, 0.863);
   background: url("../../../public/bg.png") no-repeat center center;
   background-size: cover;
   font-weight: 100;
+}
+
+//---------------------------------------------
+.section-charts {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(300px, 1fr)
+  ); // Auto layout with minimum width for each card
+  gap: 1rem;
+  margin-bottom: 1rem;
+
+  .pie-chart-card,
+  .doughnut-chart-card {
+    .p-chart {
+      height: 300px; // Set height for pie/doughnut charts
+    }
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr; // Full width for each card on smaller screens
+    .pie-chart-card,
+    .doughnut-chart-card {
+      .p-chart {
+        height: 250px; // Adjust height for smaller screens
+      }
+    }
+  }
+}
+
+//============================topbox
+//  background: linear-gradient(210deg, rgb(26, 26, 62), rgb(113, 118, 242));
+
+.topbox {
+  width: 100%;
+  height: 150px;
+  border-radius: 8px;
+  transition: all 0.2s;
+  box-shadow: 1px 5px 7px 2px rgb(200, 200, 200);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  p {
+    transition: all 0.2s;
+    font-weight: 100;
+    font-size: small;
+  }
+  span {
+    font-weight: 100;
+    transition: all 0.2s;
+    font-size: xx-large;
+  }
+  img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 15px;
+    transition: all 0.6s ease-in-out;
+    filter: invert(1);
+  }
+}
+.topbox:hover {
+  transform: scale(103%) translateY(-5px);
+  box-shadow: 2px 10px 12px 4px rgb(132, 132, 132);
+  p {
+    font-size: medium;
+  }
+  span {
+    font-size: xx-large;
+  }
+  img {
+    transform: scale(110%) translateY(-5px);
+  }
 }

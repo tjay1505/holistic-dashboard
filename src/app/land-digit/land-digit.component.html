@@ -1,15 +1,13 @@
+<div class="header-container">
+  <!-- Breadcrumb -->
+  <p-breadcrumb class="breadcrumb" [model]="items" [home]="home"></p-breadcrumb>
 
-  <div class="header-container">
-    <!-- Breadcrumb -->
-    <p-breadcrumb class="breadcrumb" [model]="items" [home]="home"></p-breadcrumb>
-
-    <!-- Payroll Login Button -->
-    <button class="payroll-button">
-      <a href="https://landdigit.tnhb.tn.gov.in/login">Land Digit Login</a>
-    </button>
-  </div>
+  <!-- Payroll Login Button -->
+  <button class="payroll-button">
+    <a href="https://landdigit.tnhb.tn.gov.in/login">Land Digit Login</a>
+  </button>
+</div>
 <div class="main">
-
   <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem">
     <p-dropdown
       [options]="cityOrRural"
@@ -45,12 +43,23 @@
 
   <section class="section-charts">
     <div
-      style="font-weight: 500"
+      [ngStyle]="{ background: items.clr }"
       *ngFor="let items of topBoxValue"
       class="p-4 topbox"
     >
-      <h3>{{ items.tittle }}</h3>
-      <h4>{{ items.val }}</h4>
+      <div style="width: 80%">
+        <span
+          >{{ items.val
+          }}<span style="font-size: x-small; margin-left: 5px"
+            >(in acres)</span
+          ></span
+        >
+        <p style="margin-top: 30px">{{ items.tittle }}</p>
+      </div>
+
+      <div style="width: 20%">
+        <img [src]="items.icon" alt="" />
+      </div>
     </div>
   </section>
 

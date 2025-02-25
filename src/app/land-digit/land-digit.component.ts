@@ -376,15 +376,35 @@ export class LandDigitComponent implements OnInit {
     });
   }
 
-  topBoxValue: { tittle: any; val: any }[] = [
-    { tittle: 'Land Acquisition - Award (in acres)', val: '0.00' },
-    { tittle: 'Utilised (in acres)', val: '0.00' },
-    { tittle: 'Not Utilised (in acres)', val: '0.00' },
-    { tittle: 'Land Available (in acres)', val: '0.00' },
+  topBoxValue: { tittle: any; val: any; clr: any; icon: any }[] = [
+    {
+      tittle: 'Land Acquisition - Award ',
+      val: '0.00',
+      clr: 'linear-gradient(90deg, rgb(134, 139, 29), rgb(217, 229, 150))',
+      icon: 'https://cdn-icons-png.flaticon.com/128/8523/8523891.png',
+    },
+    {
+      tittle: 'Utilised ',
+      val: '0.00',
+      clr: 'linear-gradient(90deg, rgb(26, 26, 62), rgb(113, 118, 242))',
+      icon: 'https://cdn-icons-png.flaticon.com/128/2714/2714322.png',
+    },
+    {
+      tittle: 'Not Utilised ',
+      val: '0.00',
+      clr: 'linear-gradient(90deg, rgb(234, 62, 56), rgb(255, 205, 148))',
+      icon: 'https://cdn-icons-png.flaticon.com/128/2550/2550089.png',
+    },
+    {
+      tittle: 'Land Available ',
+      val: '0.00',
+      clr: 'linear-gradient(90deg, rgb(15, 149, 0), rgb(169, 248, 155))',
+      icon: 'https://cdn-icons-png.flaticon.com/128/5189/5189311.png',
+    },
   ];
 
   changeTopBoxValue(field: any, value: any) {
-    //console.log(field, value);
+    console.log(field, value);
 
     const fieldMap: { [key: string]: number } = {
       v_TOTAL_EXTENT: 0,
