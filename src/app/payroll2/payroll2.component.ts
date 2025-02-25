@@ -180,7 +180,7 @@ export class Payroll2Component {
       this.totalDeduction,
       this.totalPay,
     ]; // Dynamic data
-    const backgroundColors = ['#2274A1', '#DD1C1A', '#F0C808'];
+    const backgroundColors = ['#A7D5F2', '#F2C6C2', '#F7E7A9'];
 
     const dataBar = {
       labels: labelsBar,
@@ -263,7 +263,7 @@ export class Payroll2Component {
         {
           label: 'Period',
           data: this.disabilityData,
-          backgroundColor: ['#2274A1', '#DD1C1A'],
+          backgroundColor: ['#D6C6E1', '#FADADD'],
         },
       ],
     };
@@ -304,7 +304,7 @@ export class Payroll2Component {
         {
           label: 'Period',
           data: this.disabilityData1,
-          backgroundColor: ['#2274A1', '#DD1C1A'],
+          backgroundColor: ['#B9E5C7', '#F7E7A9'],
         },
       ],
     };
@@ -357,7 +357,7 @@ export class Payroll2Component {
       'Misc1',
     ];
 
-    const backgroundColors = '#4285F4'; // Single color for all bars
+    const backgroundColors = '#FFCDD2'; // Single color for all bars
 
     const dataBar = {
       labels: labelsBar,
@@ -492,7 +492,7 @@ export class Payroll2Component {
       this.lic,
       this.society,
     ];
-    const backgroundColors = '#4285F4'; // Single color for all bars
+    const backgroundColors = '#FFCDD2'; // Single color for all bars
 
     const dataBar = {
       labels: labelsBar,
@@ -602,7 +602,7 @@ export class Payroll2Component {
       this.misc3,
       this.misc4,
     ]; // Replace with your dynamic data
-    const backgroundColors = '#4285F4'; // Single color for all bars, as in the image
+    const backgroundColors = '#A7D5F2'; // Single color for all bars, as in the image
 
     const dataBar = {
       labels: labelsBar,
@@ -715,7 +715,7 @@ export class Payroll2Component {
       this.misc2,
       this.totalFestivalAdvance,
     ]; // Replace with your dynamic data
-    const backgroundColors = '#4285F4'; // Single color for all bars, as in the image
+    const backgroundColors = '#A7D5F2'; // Single color for all bars, as in the image
 
     const dataBar = {
       labels: labelsBar,
@@ -858,17 +858,17 @@ export class Payroll2Component {
       {
         label: 'Sanctioned',
         data: sanctionedData,
-        backgroundColor: '#4285F4', // Blue
+        backgroundColor: '#A7C7F8', // Blue
       },
       {
         label: 'Recovered',
         data: recoveredData,
-        backgroundColor: '#EA4335', // Red
+        backgroundColor: '#F4A9A3', // Red
       },
       {
         label: 'Balance',
         data: balanceData,
-        backgroundColor: '#FBBC04', // Yellow
+        backgroundColor: '#FDE49C', // Yellow
       },
     ];
     console.log('Sanction chart data', datasets);
@@ -903,7 +903,7 @@ export class Payroll2Component {
             formatter: (value) => `₹${value.toLocaleString()}`, // Formatting numbers with ₹
             color: 'black', // Label color
             font: {
-              size: 7,
+              size: 8,
             },
           },
         },

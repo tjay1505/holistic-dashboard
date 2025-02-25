@@ -1,10 +1,12 @@
 <div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
     <mat-toolbar class="example-toolbar">
-        <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+        <button class="menu-button" (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
         <div class="flex gap-2 justify-content-center align-items-center flex-grow-1">
-            <img src="/tnhb-logo.png" alt="" style="width: 3.5rem;">
+            <img src="/tnhb-logo.png" alt="" style="width: 3.5rem; border-radius: 50%;
+">
             <h1 class="example-app-name">Tamil Nadu Housing Board</h1>
-            <img src="/100years.png" alt="" style="width: 3.5rem;">
+            <!-- <img src="/100years.png" alt="" style="width: 3.5rem; border-radius: 50%;
+  box-shadow: 0 0 30px rgba(252, 252, 252, 0.7); background-color: #f1f1f1"> -->
         </div>
     </mat-toolbar>
 
@@ -14,7 +16,7 @@
             <p-menu id="menu" [model]="items" />
         </mat-sidenav>
 
-        <mat-sidenav-content style="background-color: #FDFAD9;padding: 1.5rem;">
+        <mat-sidenav-content style="background-color: #fffde3;padding: 1.5rem;">
             <router-outlet></router-outlet>
         </mat-sidenav-content>
     </mat-sidenav-container>
